@@ -19,7 +19,7 @@ But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) 
 - Compile AHK script and place it in windows startup.
 - Profit...
 
-### Example:
+### Concept:
 ![6 Layer Functionality](https://drive.google.com/uc?export=download&id=1tQhGjQW0kp3lfWLSU9e2S-hA-UUr8cRN)
 
 ![Tab Layer](https://drive.google.com/uc?export=download&id=1edpoR4WjkO3VDphafElnbkUUhKPNOdS_)
@@ -27,5 +27,7 @@ But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) 
 ![Control Layer](https://drive.google.com/uc?export=download&id=1NpzG5ICPa1QfsUop1kAkxQo-ANIEz4Y2)
 
 ### Explaination:
-
+- When you assign a side button as a layer, you can have at most 10 controls (9 controls on the top side & 1 assigned current side button).
+- For example, when you press G8 (assigned Numpad 3) button, you will cycle tab / go to the next tab (depend on the app).
+- But when you press and hold G8 button (assigned Numpad 3) then press right mouse button, you will close the current tab.
 
