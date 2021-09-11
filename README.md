@@ -5,12 +5,27 @@ If you are dissatisfied with G Hub Control Assignments feature and need more con
 
 Logitech G604 has 9 control on top and 6 control on the side, if you are using G Hub, at most you can assign 29 programmable control (with G-Shift feature).
 
-But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) programmable control *(by sacrificing your numpad button)*, and here I will show you how to unleash that potential.
+But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) programmable control *(by sacrificing your numpad key)*, and here I will show you how to unleash that potential.
 
-Requirements:
+### Requirements:
 - Logitech G604 Gaming Mouse : https://www.logitechg.com/en-gb/products/gaming-mice/g604-lightspeed-wireless-gaming-mouse.html
 - G Hub : https://www.logitechg.com/en-gb/innovation/g-hub.html
 - AHK : https://www.autohotkey.com/
 
-Sample Setup: 
+### How:
+- Plan G604 side buttons as layers by its functionality, you can assume each layer as G-Shift so you can have 6 G-Shift buttons.
+- Assign each side & extra buttons with numpad key in G Hub.
+- Create macros with AHK based on combinations between numpad key and mouse buttons / scroll.
+- Compile AHK script and place it in windows startup.
+- Profit...
+
+### Example:
+![6 Layer Functionality](https://drive.google.com/uc?export=download&id=1tQhGjQW0kp3lfWLSU9e2S-hA-UUr8cRN)
+
+![Tab Layer](https://drive.google.com/uc?export=download&id=1edpoR4WjkO3VDphafElnbkUUhKPNOdS_)
+
+![Control Layer](https://drive.google.com/uc?export=download&id=1NpzG5ICPa1QfsUop1kAkxQo-ANIEz4Y2)
+
+### Explaination:
+
 
