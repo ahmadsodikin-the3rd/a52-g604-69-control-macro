@@ -13,7 +13,7 @@ But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) 
 - AHK : https://www.autohotkey.com/
 
 ### How:
-- Plan G604 side buttons as layers by its functionality, you can assume each layer as G-Shift so you can have 6 G-Shift buttons.
+- Organize G604 side buttons as layers by its functionality, you can assume each layer as G-Shift so you can have 6 G-Shift buttons.
 - Assign each side & extra buttons with numpad key in G Hub.
 - Create macros with AHK based on combinations between numpad key and mouse buttons / scroll.
 - Compile AHK script and place it in windows startup.
