@@ -5,7 +5,7 @@ If you are dissatisfied with G Hub Control Assignments feature and need more con
 
 Logitech G604 has 9 control on top and 6 control on the side, if you are using G Hub, at most you can assign 29 programmable control (with G-Shift feature).
 
-But with AHK script you can at least make (9 * (6 + 1 )) + 6 => **69** (nice..) programmable control *(by sacrificing your numpad key)*, and here I will show you how to unleash that potential.
+But with AHK script you can at least make (6 * 10) + 9 = **69** (nice..) programmable control *(by sacrificing your numpad key)*, and here I will show you how to unleash that potential.
 
 ### Requirements:
 - Logitech G604 Gaming Mouse : https://www.logitechg.com/en-gb/products/gaming-mice/g604-lightspeed-wireless-gaming-mouse.html
