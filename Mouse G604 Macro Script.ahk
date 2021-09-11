@@ -7,6 +7,11 @@ SetNumLockState, On
 ; Desktop
 ;================================================
 ;// Default Layer
+;LButton::
+;MButton::
+;RButton::
+;WheelUp::
+;WheelDown::
 NumpadMult::Send ^#{Left} ;// Prev Virtual Desktop
 NumpadDiv::Send ^#{Right} ;// Next Virtual Desktop
 NumpadSub::Send #d
