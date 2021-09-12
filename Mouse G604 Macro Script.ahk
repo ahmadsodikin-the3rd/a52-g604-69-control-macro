@@ -108,13 +108,13 @@ Numpad6 & NumpadDiv::Send {Down}
 	;Numpad1 & WheelDown::
 	;Numpad1 & NumpadAdd::
 	;Numpad1 & NumpadSub::
-	Numpad1 & NumpadMult::Send {Browser_Foward}
+	Numpad1 & NumpadMult::Send {Browser_Forward}
 	Numpad1 & NumpadDiv::Send {Browser_Back}
 
 	Numpad2::Send {Home}{F5}
 	Numpad2 & LButton::Send {Space} ;// Pause for video
 	;Numpad2 & MButton::
-	Numpad2 & RButton::Send {f} ;// Fullscreen for video
+	Numpad2 & RButton::Send f ;// Fullscreen for video
 	Numpad2 & WheelUp::Send ^{+}
 	Numpad2 & WheelDown::Send ^{-}
 	Numpad2 & NumpadAdd::Send {Up} ;// For video
