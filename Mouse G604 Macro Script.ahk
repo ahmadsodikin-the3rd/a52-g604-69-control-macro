@@ -1,23 +1,19 @@
-﻿;// Logitech G604 69+ Programmable Control with AHK
+;// Logitech G604 69+ Programmable Control with AHK
 ;// By ahmadsodikin-the3rd
 ;// GitHub : https://github.com/ahmadsodikin-the3rd/a52-g604-69-control-macro.git
 
 SetNumLockState, On
 
-; Desktop
+; Default Layer
 ;================================================
-;// Default Layer
-;LButton::
-;MButton::
-;RButton::
-;WheelUp::
-;WheelDown::
 NumpadMult::Send ^#{Left} ;// Prev Virtual Desktop
 NumpadDiv::Send ^#{Right} ;// Next Virtual Desktop
-NumpadSub::Send #d
 NumpadAdd::Send #t ;// Select taskbar app
+NumpadSub::Send #d ;//Hide/Show Desktop
+NumpadSub & WheelUp:: Send #{Up} ;//Maximise
+NumpadSub & WheelDown:: Send #{Down} ;// Minimise
 
-;// Custom App 1 Layer (G9 Button)
+;// Custom App 1
 Numpad1::return
 ;Numpad1 & LButton::
 ;Numpad1 & MButton::
@@ -29,7 +25,7 @@ Numpad1::return
 ;Numpad1 & NumpadMult::
 ;Numpad1 & NumpadDiv::
 
-;// Custom App 2 Layer (G6 Button)
+;// Custom App 2
 Numpad2::return
 ;Numpad2 & LButton::
 ;Numpad2 & MButton::
@@ -41,7 +37,7 @@ Numpad2::return
 ;Numpad2 & NumpadMult::
 ;Numpad2 & NumpadDiv::
 
-;// Global Tab Layer (G8 Button)
+;// Global Tab Layer
 Numpad3::Send ^{Tab}
 Numpad3 & LButton::Send ^t
 Numpad3 & MButton::Send ^+t
@@ -53,7 +49,7 @@ Numpad3 & WheelDown::Send {WheelLeft}
 Numpad3 & NumpadMult::Send ^{Tab}
 Numpad3 & NumpadDiv::Send ^+{Tab}
 
-;// Global Operational Layer (G5 Button)
+;// Global Operational Layer
 Numpad4::Send {Enter}
 Numpad4 & LButton::Send ^c
 Numpad4 & MButton::Send #+s
@@ -73,7 +69,7 @@ Numpad4 & NumpadDiv:: ;// Line Copy
 	Send ^c
 return
 
-;// Global Windows Layer (G7 Button)
+;// Global Windows Layer
 Numpad5::Send !{Tab}
 Numpad5 & LButton::Send #{Tab} ;// Task view
 ;Numpad5 & MButton::
@@ -85,7 +81,7 @@ Numpad5 & NumpadSub::Send !{F4}
 Numpad5 & NumpadMult::Send #t
 Numpad5 & NumpadDiv::Send #t
 
-;// Global Media Layer (G4 Button)
+;// Global Media Layer
 Numpad6::Send {Media_Play_Pause}
 Numpad6 & LButton::Send {Left}
 ;Numpad6 & MButton::
@@ -101,11 +97,14 @@ Numpad6 & NumpadDiv::Send {Down}
 ;================================================
 #IfWinActive ahk_exe chrome.exe
 	Numpad1::Send {MButton}
-	;Numpad1 & LButton::
+	Numpad1 & LButton:: ;// Search udin
+		Send udin`%
+		Send {Enter}
+	return
 	;Numpad1 & MButton::
 	Numpad1 & RButton::^+j ;// Dev Console
-	;Numpad1 & WheelUp::
-	;Numpad1 & WheelDown::
+	Numpad1 & WheelUp::Send ^{+}
+	Numpad1 & WheelDown::Send ^{-}
 	;Numpad1 & NumpadAdd::
 	;Numpad1 & NumpadSub::
 	Numpad1 & NumpadMult::Send {Browser_Forward}
@@ -115,13 +114,22 @@ Numpad6 & NumpadDiv::Send {Down}
 	Numpad2 & LButton::Send {Space} ;// Pause for video
 	;Numpad2 & MButton::
 	Numpad2 & RButton::Send f ;// Fullscreen for video
-	Numpad2 & WheelUp::Send ^{+}
-	Numpad2 & WheelDown::Send ^{-}
+	Numpad2 & WheelUp::Send {Up} ;// For video
+	Numpad2 & WheelDown::Send {Up} ;// For video
 	Numpad2 & NumpadAdd::Send {Up} ;// For video
 	Numpad2 & NumpadSub::Send {Down} ;// For video
 	Numpad2 & NumpadMult::Send {Right} ;// For video
 	Numpad2 & NumpadDiv::Send {Left} ;// For video
+	
+	~RButton Up::
+	if (GetKeyState("Numpad1","P") or GetKeyState("Numpad2","P") or GetKeyState("Numpad3","P"))
+	{
+		Sleep, 100
+		Send {Escape}
+	}
+	return
 #If
+
 
 ; Visual Studio 2019
 ;================================================
@@ -132,7 +140,7 @@ Numpad6 & NumpadDiv::Send {Down}
 	Numpad1 & RButton::Send +{F5}
 	;Numpad1 & WheelUp::
 	;Numpad1 & WheelDown::
-	;Numpad1& NumpadAdd::
+	;Numpad1 & NumpadAdd::
 	;Numpad1 & NumpadSub::
 	;Numpad1 & NumpadMult::
 	;Numpad1 & NumpadDiv::
@@ -143,7 +151,7 @@ Numpad6 & NumpadDiv::Send {Down}
 	Numpad2 & RButton::Send {LButton}{F12} ;// Goto Definition
 	;Numpad2 & WheelUp::
 	;Numpad2 & WheelDown::
-	;Numpad2& NumpadAdd::
+	;Numpad2 & NumpadAdd::
 	;Numpad2 & NumpadSub::
 	;Numpad2 & NumpadMult::
 	;Numpad2 & NumpadDiv::
@@ -178,7 +186,7 @@ Numpad6 & NumpadDiv::Send {Down}
 	Numpad2 & RButton::Send {F12} ;// Goto Definition
 	;Numpad2 & WheelUp::
 	;Numpad2 & WheelDown::
-	;Numpad2& NumpadAdd::
+	;Numpad2 & NumpadAdd::
 	;Numpad2 & NumpadSub::
 	;Numpad2 & NumpadMult::
 	;Numpad2 & NumpadDiv::
@@ -199,7 +207,7 @@ Numpad6 & NumpadDiv::Send {Down}
 	return
 	Numpad1 & WheelUp::Send ^{Home}
 	Numpad1 & WheelDown::Send ^{End}
-	;Numpad1& NumpadAdd::
+	;Numpad1 & NumpadAdd::
 	;Numpad1 & NumpadSub::
 	;Numpad1 & NumpadMult::
 	;Numpad1 & NumpadDiv::
@@ -210,12 +218,37 @@ Numpad6 & NumpadDiv::Send {Down}
 	;Numpad2 & RButton::
 	;Numpad2 & WheelUp::
 	;Numpad2 & WheelDown::
-	;Numpad2& NumpadAdd::
+	;Numpad2 & NumpadAdd::
 	;Numpad2 & NumpadSub::
 	;Numpad2 & NumpadMult::
 	;Numpad2 & NumpadDiv::
 #If
 
+; MS Team
+;================================================
+#IfWinActive ahk_exe Teams.exe
+	Numpad1::Send ^+m ;// Mute Toggle 
+	Numpad1 & LButton::Send ^2; // Open Chat
+	;Numpad1 & MButton::
+	Numpad1 & RButton::Send ^3; // Open Team
+	;Numpad1 & WheelUp::
+	;Numpad1 & WheelDown::
+	;Numpad1 & NumpadAdd::
+	;Numpad1 & NumpadSub::
+	;Numpad1 & NumpadMult::
+	;Numpad1 & NumpadDiv::
+
+	Numpad2::Send #{PrintScreen} ;// Capture & Save screen 
+	Numpad2 & LButton::Send #{Up} ;// Maximize
+	;Numpad2 & MButton::
+	Numpad2 & RButton::Send #{Down} ;// Restore or Minimize
+	;Numpad2 & WheelUp::
+	;Numpad2 & WheelDown::
+	;Numpad2 & NumpadAdd::
+	;Numpad2 & NumpadSub::
+	;Numpad2 & NumpadMult::
+	;Numpad2 & NumpadDiv::
+#If
 
 ; Template
 ;================================================
